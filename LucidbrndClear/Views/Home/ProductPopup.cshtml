@@ -1,0 +1,88 @@
+﻿@model HomeViewModel
+
+@{ if (Model.Product != null)
+    {
+        <div class="popup-product-wrap">
+            <div class="product-images">
+                <script src="~/js/PopupProductSliderScript.js"></script>
+                <div class="main">
+                    <div class="slider slider-for">
+                        <div class="selected-img"><img src="@Model.Product.Img1" /></div>
+                        <div class="selected-img"><img src="@Model.Product.Img2" /></div>
+                        @{
+                            if (Model.Product.Img3 != null)
+                            {
+                                <div class="selected-img"><img src="@Model.Product.Img3" /></div>
+
+                            }
+                        }
+                    <div class="selected-img"><img src="/img/sizes.jpg" /></div>
+                    </div>
+                    <div class="slider slider-nav">
+                        <div class="unselected-img"><img src="@Model.Product.Img1" /></div>
+                        <div class="unselected-img"><img src="@Model.Product.Img2" /></div>
+                        @{
+                            if (Model.Product.Img3 != null)
+                            {
+                                <div class="unselected-img"><img src="@Model.Product.Img3" /></div>
+
+                            }
+                        }                               
+                        <div class="unselected-img"><img src="/img/sizes.jpg" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-information">
+                <div class="product-information-wrap">
+                    <h1>@Model.Product.Name</h1>
+                    <h3>@Model.Product.Price р.</h3>
+                    <p>@Model.Product.Description</p>
+                    <p class="product-composition">@Model.Product.Composition</p>
+                    @if (Model.Product.Amount == 0)
+                    {
+                        <h1>Out of Stock</h1>
+                    }
+                    else
+                    {
+
+                        using (Html.BeginForm("AddToCart", "Home"))
+                        {
+                            @Html.Hidden("ProductId", @Model.Product.ProductId.ToString())
+                            <div>
+                                <select class="size-select" name="size">
+                                    @if (@Model.Product.AmountOfSizeXS != 0)
+                                    {
+                                        <option id="XS" value="XS">XS</option>
+                                    }
+                                    @if (@Model.Product.AmountOfSizeS != 0)
+                                    {
+
+                                            <option id="S" value="S">S</option>
+                                    }
+                                    @if (@Model.Product.AmountOfSizeM != 0)
+                                    {
+                                            <option id="M" value="M">M</option>
+                                    }
+                                    @if (@Model.Product.AmountOfSizeL != 0)
+                                    {
+                                            <option id="L" value="L">L</option>
+                                    }
+                                    @if (@Model.Product.AmountOfSizeXL != 0)
+                                    {
+                                            <option id="XL" value="XL">XL</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="add-to-cart-inherit">
+                                <input type="submit" value="В корзину" id="add-to-cart-button" />
+
+                            </div>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,22 @@
+﻿@model Product
+<div class="product">
+    <a class="product-card" data-series="@Model.ProductId">
+        <div class="product-pictures">
+            <img class="first-img" src="@Model.Img1" />
+        </div>
+        <div class="product-information">
+            <h3 class="product-name">@Model.Name</h3>
+            <h4 class="price">@Model.Price р.</h4>
+            @{
+                if (Model.Amount > 0)
+                {
+                    <p class="product-amount">В наличии </p>
+                }
+                else
+                {
+                    <p class="product-amount" style="color:red">Распродано</p>
+                }
+            }
+        </div>
+    </a>
+</div>

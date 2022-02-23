@@ -1,0 +1,302 @@
+﻿@media (max-width:480px) {
+    .item-in-cart{
+        flex-direction:column;
+        height:unset !important;
+    }
+    .item-in-cart-information {
+        width: 100% !important;
+    }
+    .item-in-cart {
+        margin: 4rem auto !important;
+    }
+    .undo-panel-initial.visible {
+        flex-direction: column;
+    }
+    .items-in-cart-buttons{
+        width:100% !important;
+        align-content:center;
+           
+    }
+    .countdown-initial{
+        width:100%;
+    }
+    .countdown-initial h3 {
+        margin: 0;
+        font-weight: 300;
+        font-size: 8.98rem !important;
+    }
+
+    .undo-delete-button-initial{
+        width:100%;
+        height:5rem;
+        display:flex;
+    }
+    .undo-delete-button-initial .undo-delete-button{
+        padding:1%;
+        margin:auto;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+    .decrease-product-in-cart-button{
+        height:unset;
+    }
+    .increase-product-in-cart-button {
+        height: unset;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    top: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+    transition: all 0.4s ease-in-out
+}
+
+.header-initial {
+    background: white;
+    height: 9rem;
+    color: #fff;
+    display: flex;
+}
+
+input[type="text"], input[type="tel"], textarea {
+    border: 1px solid #000;
+    transition: all 2s ease;
+    border-radius: 3px;
+}
+
+input[type="text"]:hover, input[type="tel"]:hover, textarea:hover {
+    border: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    transition: all 1s ease;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, textarea:focus {
+    outline: 0;
+    outline-offset: 0;
+    color: none;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+}
+
+.cart-page-initial{
+    max-width:900px;
+    margin:12rem auto;
+}
+
+.items-in-cart-initial{
+    margin: 1rem;
+    border-bottom: 1px solid #000;
+}
+
+.item-in-cart {
+    display: flex;
+    max-width:900px;
+    height:12rem;
+    margin:5rem auto;
+}
+
+.item-in-cart-information{
+    width:66.666%;
+    display:flex;
+}
+
+.item-in-cart .product-in-cart-image {
+    width:50%;
+    padding: 2%;
+}
+
+.item-in-cart .product-in-cart-image img {
+    max-width: 10rem;
+}
+
+.product-in-cart-information-initial{
+    width:50%;
+}
+
+.product-in-cart-information{
+    width:100%;
+}
+
+.product-in-cart-grid {
+    width: 100%;
+    display: inline-grid;
+}
+
+.product-in-cart-grid .grid-item {
+    min-height: 1px;
+    text-align:center;
+}
+
+#amount-of-products-in-cart{
+    display:flex;
+    align-items:center;
+}
+
+    #amount-of-products-in-cart input[type="submit"] {
+        height: 40%;
+        width: 25px
+        ;
+    }
+
+#amount-of-products-in-cart h3 {
+    width: 40%;
+    text-align: center;
+}
+
+#price-for-one {
+    width: auto;
+    vertical-align: bottom;
+}
+
+.price-result{
+    width:100%;
+}
+
+.price-result h3,h4, h5{
+    margin: .5rem;
+}
+.price-counter-initial {
+    float: right;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.items-in-cart-buttons {
+    width: 33.333%;
+    display: flex;
+    align-items: center
+}
+
+.customer-information-initial {
+    margin:1rem;
+    border-bottom: 1px solid #000;
+}
+
+.customer-information {
+    max-width:500px;
+    width:100%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.customer-information input[type="text"], input[type="tel"], textarea {
+    font-size: 1rem;
+    height: 3rem;
+    width: inherit;
+    padding: 0.025rem;
+    margin: 2rem;
+    margin-left: unset;
+}
+
+.purchase-button-initial{
+    width:100%;
+    text-align:center;
+    align-content:center;
+    vertical-align:central;
+}
+
+#purchase-button, .remove-from-cart-button {
+    margin: 20px auto;
+    width: 10rem;
+    height: 3rem;
+}
+
+.remove-from-cart-button {
+    width: 3rem;
+    height: 2rem;
+    border: 1px solid #000;
+    float: right;
+}
+
+.undo-panel-initial{
+    display:none;
+}
+
+.undo-panel-initial.visible {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.undo-delete-button-initial {
+    position: relative;
+}
+
+    .undo-delete-button-initial .undo-delete-button {
+        height: 2rem;
+        width: 4rem;
+        font-size: 10px;
+    }
+
+
+.item-in-cart-information.hidden {
+    display: none;
+}
+
+.items-in-cart-buttons.hidden{
+    display:none;
+}
+
+.invalid{
+    border: solid 1px #ee5959 !important;
+}
+
+
+.base-timer-initial{
+    width:80%;
+    display:flex;
+    text-align:center;
+}
+
+
+.base-timer {
+    position: relative;
+    height: 5rem;
+    width: 5rem;
+    margin:0 auto;
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: white;
+}
+
+.base-timer-path-remaining {
+    /* Такая же ширина, что и у исходного кольца */
+    stroke-width: 7px;
+    /* Замыкаем концы линии, чтобы создать круг */
+    stroke-linecap: round;
+    /* Делаем так, чтобы анимация начиналась вверху */
+    transform: rotate(90deg);
+    transform-origin: center;
+    /* Одна секунда подгоняется под таймер обратного отсчета */
+    transition: 1s linear all;
+    /* Задаем смену цвета кольца, когда обновляется значение цвета */
+    stroke: currentColor;
+    stroke: grey;
+}
+
+.base-timer__svg {
+    /* Переворачиваем кольцо и задаем движение анимации слева направо */
+    transform: scaleX(-1);
+}

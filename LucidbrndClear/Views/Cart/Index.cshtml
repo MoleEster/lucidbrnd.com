@@ -1,0 +1,32 @@
+﻿@model CartViewModel
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleCart.css" />
+</head>
+<header>
+    <div class="header-initial">
+        <a id="logo-container" href="/Home/Index"><img id="logo" src="~/img/newlogo.png"/></a>
+    </div>
+</header>
+
+<div class="cart-page-initial">
+    <div class="items-in-cart-initial">
+        @{
+            Html.RenderPartial("ItemsInCart", Model.UsersProductsInCart);
+        }
+    </div>
+    <div class="customer-information-initial">
+        @using (Html.BeginForm("CreateNewSuccesfulOrder", "Cart"))
+        {
+            <div class="customer-information">
+                <input name="FIO" id="FIOInformation-input" type="text" placeholder="ФИО" />
+                <input name="Email" id="email-input" type="text" placeholder="Электронная почта" />
+                <input name="Phone" id="phone-input" type="tel" placeholder="Номер телефона" />
+                <textarea name="Adress" id="adress-input" placeholder="Адрес ближайшего СДЭКа" rows="3" style="height:4rem;resize:none;"></textarea>
+            </div>
+            <div class="purchase-button-initial">
+                <input id="purchase-button" value="Оплатить" type="submit">
+            </div>
+            <script src="~/js/ValidationScript.js"></script>
+        }
+    </div>
+</div>

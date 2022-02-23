@@ -1,0 +1,15 @@
+﻿<header>
+    <a id="logo-container" href="/Home/Index"><img id="logo" src="~/img/logo.png" /></a>
+</header>
+
+<div class="error-page">
+    <div class="error-page-information">
+        <h1>Похоже, на нашем сайте произошла ошибка</h1>
+        <p>Пожалуйста, в случае, если вы видите это, сообщите, нажав на кнопку ниже </p>
+        @using (Html.BeginForm("TellAboutError", "Home", FormMethod.Post))
+        {
+            <input type="submit" value="Сообщить" class="error-page-button"/>
+        }
+    </div>
+
+</div>

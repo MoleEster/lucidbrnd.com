@@ -1,0 +1,73 @@
+﻿@model (Product, string,int)
+
+@{
+    double orverallprice = Model.Item1.Price * Model.Item3;
+}
+
+
+<div class="item-in-cart">
+    <div class="undo-panel-initial">
+        <div class="base-timer-initial">
+            <div class="base-timer">
+                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g class="base-timer__circle">
+                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                        <path class="base-timer-path-remaining"
+                              stroke-dasharray="283"
+                              d="
+                                M 50, 50
+                                m -45, 0
+                                a 45,45 0 1,0 90,0
+                                a 45,45 0 1,0 -90,0
+                              "></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="undo-delete-button-initial">
+            <input type="submit" class="undo-delete-button" value="Отменить" data-series="@Model.Item1.ProductId" data-size="@Model.Item2" />
+        </div>
+    </div>
+    <div class="item-in-cart-information">
+        <div class="product-in-cart-image">
+            <img src="@Model.Item1.Img1" />
+        </div>
+        <div class="product-in-cart-information-initial">
+            <div class="product-in-cart-information">
+                <h1>@Model.Item1.Name</h1>
+                <h3>@Model.Item2</h3>
+            </div>
+            <div class="product-in-cart-grid">
+                <div class="grid-item" id="price-for-one" style=" grid-column: 1">
+                    <h3>@Model.Item1.Price р.</h3>
+                </div>
+                <div class="grid-item" id="amount-of-products-in-cart" style=" grid-column: 2">
+                    @{
+                        if (Model.Item3 == 1)
+                        {
+                            <input type="submit" value="-" class="decrease-product-in-cart-button removing-from-cart" data-series="@Model.Item1.ProductId" data-size="@Model.Item2" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="-" class="decrease-product-in-cart-button" data-series="@Model.Item1.ProductId" data-size="@Model.Item2" />
+                        }
+                    }
+
+                    <h3>@Model.Item3</h3>
+                    @{
+                        if (Model.Item3 < 10)
+                        {
+                            <input type="submit" value="+" class="increase-product-in-cart-button" data-series="@Model.Item1.ProductId" data-size="@Model.Item2" />
+                        }
+                    }
+                </div>
+                <div class="grid-item" id="overall-price" style=" grid-column: 3">
+                    <h3>@orverallprice р.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items-in-cart-buttons">
+        <input type="submit" value="X" class="remove-from-cart-button removing-from-cart" data-series="@Model.Item1.ProductId" data-size="@Model.Item2" onclick="startTimer" />
+    </div>
+</div> 

@@ -1,0 +1,46 @@
+﻿@model HomeViewModel
+    <header>
+        <div class="header-initial">
+            <a id="logo-container" href="/Home/Index"><img id="logo" src="~/img/newlogo.png" /></a>
+            <div class="cart-initial">
+                <h4>@Model.ItemsInCart</h4>
+                <a id="cart-container" href="/Cart/Index">
+                    <img id="cart" src="~/svg/cart.svg" />
+                </a>
+            </div>
+            @{
+                if (Model.ShowAlert)
+                {
+                    <div class="added-to-cart">
+                        <div style="display:flex;margin:auto">
+                            <h5 style="color:white;margin:0.5rem">
+                                В корзине
+                            </h5>
+                        </div>
+                    </div>
+                }
+            }
+          <script src="~/js/AddinToCartScript.js"></script>
+
+        </div>
+    </header>
+    <hr />
+    <div class="products-list">
+        @{
+            foreach (Product product in Model.Products)
+            {
+                @Html.Partial("Product", product);
+            }
+        }
+        <script src="~/js/ProductPopupScript.js"></script>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-body">
+            <a class="popup-close close_popup"><img src="~/img/cancel.png" /></a>
+            <div class="popup-content">
+                @{
+                    Html.RenderPartial("ProductPopup");
+                }
+            </div>
+        </div>
+    </div>
